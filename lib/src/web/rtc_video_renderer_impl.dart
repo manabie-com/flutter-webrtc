@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:html' as html;
 import 'dart:js_util' as jsutil;
-import 'dart:web_ui' as web_ui;
+import 'dart:ui_web' as ui_web;
 
 import 'package:flutter/services.dart';
 
@@ -194,7 +194,7 @@ class RTCVideoRendererWeb extends VideoRenderer {
   @override
   Future<void> initialize() async {
     // ignore: undefined_prefixed_name
-    web_ui.platformViewRegistry.registerViewFactory('RTCVideoRenderer-$textureId',
+    ui_web.platformViewRegistry.registerViewFactory('RTCVideoRenderer-$textureId',
         (int viewId) {
       _subscriptions.forEach((s) => s.cancel());
       _subscriptions.clear();
